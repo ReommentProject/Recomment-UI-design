@@ -2,7 +2,7 @@ package com.example.recyclerviewinsidefragment;
 
 public class Data {
     public static String[] names=new String[]{
-            "Android","java","C","C++","php", "Android","java","C","C++","php"
+            "Engineer","Happy","Lisa","Miss","sad", "Engineer","Happy","Lisa","Miss","sad"
 
     };
 
