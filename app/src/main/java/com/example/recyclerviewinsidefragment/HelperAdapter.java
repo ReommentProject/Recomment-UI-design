@@ -17,7 +17,7 @@ import java.util.ArrayList;
 
 public class HelperAdapter extends RecyclerView.Adapter {
     Context context;
-    ArrayList arrayList , arrayListName;
+    ArrayList<String> arrayList , arrayListName;
 
     public HelperAdapter(Context context, ArrayList arrayList,ArrayList arrayListName) {
         this.context = context;
@@ -36,8 +36,8 @@ public class HelperAdapter extends RecyclerView.Adapter {
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
         ViewHolderClass viewHolderClass=(ViewHolderClass)holder;
-        viewHolderClass.imageView.setImageResource(Data.images[position]);
-        viewHolderClass.textView.setText(Data.names[position]);
+        viewHolderClass.textView1.setText(arrayList.get(position));
+        viewHolderClass.textView2.setText(arrayListName.get(position));
         viewHolderClass.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -52,12 +52,11 @@ public class HelperAdapter extends RecyclerView.Adapter {
     }
     public class ViewHolderClass extends RecyclerView.ViewHolder
     {
-        ImageView imageView;
-        TextView textView;
+        TextView textView1, textView2;
         public ViewHolderClass(@NonNull View itemView) {
             super(itemView);
-            imageView=(ImageView)itemView.findViewById(R.id.imageView);
-            textView=(TextView)itemView.findViewById(R.id.textView);
+            textView1=(TextView)itemView.findViewById(R.id.textView1);
+            textView2=(TextView)itemView.findViewById(R.id.textView2);
         }
     }
 }
